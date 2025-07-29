@@ -1,6 +1,6 @@
-# flashcards
 ## 📁 Project Structure
 
+```
 flashcards/
 ├── index.html        # Main page for sequential word review
 ├── shuffle.html      # Shuffle mode for randomized testing
