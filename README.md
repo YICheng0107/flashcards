@@ -13,7 +13,7 @@ flashcards/
 │   ├── shuffle.js
 │   ├── star.js
 └── README.md
-
+```
 
 ## 🚀 How to Use
 
