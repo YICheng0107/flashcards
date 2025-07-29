@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Shufflecards</title>
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="top-links">
+    <a href="index.html">🏠 Home</a>
+    <a href="star.html">⭐ Favorites</a>
+  </div>
+
+  <div class="settings">
+    <input id="count-input" type="number" min="1" max="7500" value="50" />
+    <button id="set-count">Confirm</button>
+  </div>
+
+  <div class="flashcard card" onclick="toggleCard()">
+    <div class="card-inner">
+      <div class="card-face front2" id="card-front">Please enter the number of questions and click "Confirm" to begin.
+      </div>
+      <div class="card-face back" id="card-back">The explanation will appear here.</div>
+    </div>
+    <div class="star-btn" id="star-btn" title="Add to Favorites">☆</div>
+  </div>
+
+  <div class="controls">
+    <button class="arrow-button" onclick="showPrevious()">⬅️</button>
+    <div class="progress" id="progress">0 / 0</div>
+    <button class="arrow-button" onclick="showNext()">➡️</button>
+  </div>
+
+  <footer class="page-footer">
+    <p><em>&copy; 2025 YI Cheng Flashcards. All rights reserved.</em></p>
+  </footer>
+
+  <script>
+    document.getElementById("set-count").addEventListener("click", function () {
+      const cardFront = document.getElementById("card-front");
+      if (cardFront) {
+        cardFront.classList.remove("front2");
+        cardFront.classList.add("front");
+      }
+    });
+  </script>
+
+  <script src="js/flashcards.js"></script>
+  <script src="js/shuffle.js"></script>
+
+</body>
+
+</html>

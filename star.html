@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Favorites</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="top-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="shuffle.html">🔀 Shuffle</a>
+    </div>
+
+    <div class="flashcard card" onclick="toggleCard()" style="display:none;">
+        <div class="card-inner">
+            <div class="card-face front" id="card-front">Loading...</div>
+            <div class="card-face back" id="card-back"></div>
+        </div>
+        <div class="star-btn active" id="star-btn" title="Remove from Favorites">★</div>
+    </div>
+
+    <p class="no-stars-msg" id="no-stars-msg" style="display:none;">You haven't added any vocabulary to your favorites ★
+    </p>
+
+    <div class="controls" style="display:none;">
+        <button class="arrow-button" onclick="showPrevious()">⬅️</button>
+        <div class="progress" id="progress">0 / 0</div>
+        <button class="arrow-button" onclick="showNext()">➡️</button>
+    </div>
+
+    <footer class="page-footer">
+        <p><em>&copy; 2025 YI Cheng Flashcards. All rights reserved.</em></p>
+    </footer>
+
+    <script src="js/flashcards.js"></script>
+    <script src="js/star.js"></script>
+
+</body>
+
+</html>

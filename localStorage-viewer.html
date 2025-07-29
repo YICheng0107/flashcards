@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>LocalStorage</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: #f4f4f4;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    pre {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+      max-height: 80vh;
+    }
+
+    .top-link {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.1em;
+      color: #3498db;
+      text-decoration: none;
+      background: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s, color 0.3s;
+      z-index: 999;
+    }
+
+    .top-link:hover {
+      background: #3498db;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="top-link">🏠 Home</a>
+  <h1>🔍 localStorage</h1>
+
+  <pre id="output">Loading...</pre>
+
+  <script>
+    const key = 'flashcard-stars';
+    const raw = localStorage.getItem(key);
+    const output = document.getElementById('output');
+
+    if (raw) {
+      try {
+        const json = JSON.parse(raw);
+        output.innerText = JSON.stringify(json, null, 2);
+      } catch (e) {
+        output.innerText = `❌ 無法解析 JSON：\n${raw}`;
+      }
+    } else {
+      output.innerText = '❗ 沒有找到 flashcard-stars。你可能還沒加星任何單字。';
+    }
+  </script>
+
+</body>
+
+</html>
